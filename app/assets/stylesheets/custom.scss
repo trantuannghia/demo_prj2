@@ -6,14 +6,25 @@
   -webkit-transform: translate(-50%, -50%);
 }
 
-$blue-dark: #fff;
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+$white: #fff;
 $blue: #e6ffff;
 $blues: #88c6ed;
 $yellow: #ff0;
+$bl: #333333;
+$dark-red: #e8e8e8;
+$blue-dark: #7777ff;
+$grey: #777;
+$red: red;
 
-// header
+//header
 
-#logo {
+.logo {
   color: $yellow;
   float: left;
   font-size: 1.7em;
@@ -119,7 +130,97 @@ footer {
   }
 }
 
-/*form */
+// form
+
 .btn {
   margin-top: 20px;
+}
+
+//post
+
+.posts {
+  list-style: none;
+  padding: 0;
+  li {
+    border-top: 1px solid $dark-red;
+    padding: 10px 0;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      margin-top: 15px;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+    label {
+      color: $bl;
+    }
+  }
+  .gravatar {
+    float: left;
+    margin: 5px 10px;
+  }
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+span.picture {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}
+
+label {
+  cursor: pointer;
+}
+
+ol > li{
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+ul > li {
+  margin-bottom: 10px;
+}
+
+//form
+.new_post {
+  input, textarea, select, .uneditable-input {
+    border: 1px solid $gray;
+    margin-bottom: 15px;
+    width: 100%;
+    @include box_sizing;
+  }
+}
+input {
+  height: auto !important;
+}
+
+.session_remember_me {
+  margin-left: 0;
+  width: auto;
+}
+
+.error_explanation {
+  color: $red;
+
+  ul {
+    color: $red;
+    margin: 0 0 30px 0;
+  }
 }

@@ -58,3 +58,16 @@ en:
   shared:
     error_message:
       error: "error"
+    post_form:
+      post: "Post"
+      compose_new_post: "Write new post here..."
+  posts:
+    create:
+      post_created!: "Post created !"
+    post:
+      you_sure: "Are you sure ?"
+    destroy:
+      post_deleted: "Post deleted!"
+      post_deleted_fail: "Post deleted fail!"
+  javascript:
+    max_file_size: "lol"
