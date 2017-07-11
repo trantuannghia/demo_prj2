@@ -30,3 +30,4 @@ config/settings.local.yml
 config/settings/*.yml
 config/environments/*.local.yml
 spec/support
+public/uploads

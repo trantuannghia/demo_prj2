@@ -12,6 +12,7 @@ $blues: #88c6ed;
 $yellow: #ff0;
 
 // header
+
 #logo {
   color: $yellow;
   float: left;
@@ -116,4 +117,9 @@ footer {
   small {
     float: left;
   }
+}
+
+/*form */
+.btn {
+  margin-top: 20px;
 }
