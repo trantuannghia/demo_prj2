@@ -59,15 +59,10 @@ ActiveRecord::Schema.define(version: 20170714033208) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email", limit: 255, default: "", null: false
+    t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "password_digest", limit: 45
-    t.string "remember_digest", limit: 45
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
-    t.string "name", limit: 255
-    t.string "phone", limit: 11
-    t.integer "is_admin", limit: 1, default: 0
     t.datetime "remember_created_at"
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
