@@ -1,0 +1,119 @@
+@import 'bootstrap';
+@import 'bootstrap-sprockets';
+
+@mixin webkit {
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+$blue-dark: #fff;
+$blue: #e6ffff;
+$blues: #88c6ed;
+$yellow: #ff0;
+
+// header
+#logo {
+  color: $yellow;
+  float: left;
+  font-size: 1.7em;
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin-right: 10px;
+  padding-top: 12px;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $blue-dark;
+    text-decoration: none;
+  }
+}
+
+.navbar-inverse {
+  border-color: $blues;
+
+  .navbar-nav > li > a {
+    color: $yellow;
+  }
+}
+
+header {
+  height: 10%;
+}
+
+.container {
+  margin: auto;
+}
+
+nav {
+  font-size: 1.2em;
+  margin-top: 5px;
+}
+
+// body
+
+body {
+  background-color: $blue;
+  height: 500px;
+  padding-top: 60px;
+}
+
+.video {
+  @include webkit;
+  height: auto;
+  left: 50%;
+  min-height: 100%;
+  min-width: 100%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  z-index: 1;
+}
+
+.content {
+  margin: 0 auto;
+  max-width: 720px;
+  position: relative;
+  text-align: center;
+  top: 30%;
+  z-index: 2;
+}
+
+.center {
+  margin-top: 50px;
+  text-align: center;
+
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+// footer
+
+footer {
+  border-top: 1px solid #blue;
+  margin-top: 250px;
+  padding-top: 5px;
+
+  a {
+    color: $gray;
+  }
+
+  &:hover {
+    color: $gray-darker;
+  }
+
+  ul {
+    float: right;
+    list-style: none;
+
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+
+  small {
+    float: left;
+  }
+}

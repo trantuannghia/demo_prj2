@@ -2,3 +2,25 @@ en:
   layouts:
     application:
       project2: "Project2"
+    header:
+      fake_book: "FAKE BOOK"
+      home: "Home"
+      help: "Help"
+      login: "Login"
+    application:
+      rubyonrails: "Ruby on rails"
+    footer:
+      framgia_vn: "Framgia Viet Nam"
+      address: "Address: 25T2, Hoang Dao Thuy street, Ha Noi"
+      phone: "12345678"
+      email: "Framgia@hotmail.com"
+  static_pages:
+    help:
+      if_you_have: "If you have any question, Let search: "
+      good_luck: "Good luck !"
+      google: "Google.com"
+      help: "Help"
+    home:
+      this_is_the_home_page: "Let's share your world with us."
+      welcome: "Welcome"
+      fake_book: "Fake book"
