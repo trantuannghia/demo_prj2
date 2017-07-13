@@ -1,0 +1,11 @@
+model:
+  user:
+    maximum_name: 255
+    maximum_email: 255
+    minimum_password: 6
+    minimum_phone: 11
+  post:
+    size_title: 250
+    size_content: 255
+  comment:
+    size_content: 45
