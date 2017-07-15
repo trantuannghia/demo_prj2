@@ -19,5 +19,4 @@ class UsersController < ApplicationController
     flash[:danger] = t ".find_rerror"
     redirect_to root_url
   end
-
 end

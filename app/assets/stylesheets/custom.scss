@@ -1,5 +1,5 @@
-@import 'bootstrap';
-@import 'bootstrap-sprockets';
+@import "bootstrap";
+@import "bootstrap-sprockets";
 
 @mixin webkit {
   -ms-transform: translate(-50%, -50%);
@@ -12,15 +12,18 @@
   box-sizing: border-box;
 }
 
-$white: #fff;
+$bl: #333333;
+$bl: #333333;
+$blue-dark: #7777ff;
+$blue-dark: #fff;
 $blue: #e6ffff;
 $blues: #88c6ed;
-$yellow: #ff0;
-$bl: #333333;
 $dark-red: #e8e8e8;
-$blue-dark: #7777ff;
+$dark-red: #e8e8e8;
 $grey: #777;
 $red: red;
+$white: #fff;
+$yellow: #ff0;
 
 //header
 
@@ -207,6 +210,7 @@ ul > li {
     @include box_sizing;
   }
 }
+
 input {
   height: auto !important;
 }
@@ -224,3 +228,4 @@ input {
     margin: 0 0 30px 0;
   }
 }
+
