@@ -1,17 +1,25 @@
-@import 'bootstrap';
-@import 'bootstrap-sprockets';
+@import "bootstrap";
+@import "bootstrap-sprockets";
 
 @mixin webkit {
   -ms-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
 }
 
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+$bl: #333333;
 $blue-dark: #fff;
 $blue: #e6ffff;
 $blues: #88c6ed;
+$dark-red: #e8e8e8;
 $yellow: #ff0;
 
-// header
+//header
 
 #logo {
   color: $yellow;
@@ -122,4 +130,100 @@ footer {
 /*form */
 .btn {
   margin-top: 20px;
+}
+
+//post
+
+.posts {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid $dark-red;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+      margin-top: 15px;
+    }
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+    label {
+      color: $bl;
+    }
+  }
+  .gravatar {
+    float: left;
+    margin: 5px 10px;
+  }
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+span.picture {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}
+
+label {
+  cursor: pointer;
+}
+
+ol > li{
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+ul > li {
+  margin-bottom: 10px;
+}
+
+//form
+.new_post {
+  input, textarea, select, .uneditable-input {
+    border: 1px solid $gray;
+    margin-bottom: 15px;
+    width: 100%;
+    @include box_sizing;
+  }
+}
+input {
+  height: auto !important;
+}
+
+#session_remember_me {
+  margin-left: 0;
+  width: auto;
+}
+
+#error_explanation {
+  color: red;
+
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+.pagination {
+  .previous_page { background:#7777ff; color:white }
+  .previous_page.disabled { background: white; color: #777 }
+  .current { background: yellow }
+  .next_page { background: #7777ff; color: white }
+  .next_page.disabled { background: white; color: #777 }
 }
