@@ -6,7 +6,7 @@ class Post < ApplicationRecord
 
   validates :user, presence: true
   validates :title, length: {maximum: Settings.model.post.size_title}
-  validates :content, length: {maximum: Settings.model.post.size_content}
+  validates :content, presence:true, length: {maximum: Settings.model.post.size_content}
   validate  :picture_size
 
   mount_uploader :picture, PictureUploader
