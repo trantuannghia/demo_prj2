@@ -1,14 +1,24 @@
 class UsersController < ApplicationController
-  before_action :load_user, only: :show
+  before_action :load_user, except: :index
 
   def index
-    @users = User.where(activated: true)
-      .select(:id, :name, :email).paginate page: params[:page],
-      per_page: Settings.controller.user_controller.size_page
+    @users = User.select(:id, :name, :email).page params[:page]
   end
 
   def show
-    @posts = @user.posts.paginate page: params[:page]
+    @posts = @user.posts.page(params[:page]).per 10
+  end
+
+  def following
+    @title = "Following"
+    @users = @user.following.page params[:page]
+    render "show_follow"
+  end
+
+  def followers
+    @title = "Followers"
+    @users = @user.followers.page params[:page]
+    render "show_follow"
   end
 
   private

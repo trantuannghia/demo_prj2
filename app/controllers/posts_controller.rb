@@ -9,11 +9,11 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build post_params
     if @post.save
+      #render json: {status: :success, html: render_to_string(@post)}
       flash[:success] = t ".post_created!"
       redirect_to root_url
     else
-      @feed_items = []
-      render "static_pages/home"
+      render json: {status: :fail}
     end
   end
 

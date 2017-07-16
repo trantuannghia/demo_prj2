@@ -5,22 +5,25 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem "bootstrap-kaminari-views"
 gem "bootstrap-sass"
-gem "bootstrap-will_paginate"
 gem "carrierwave"
 gem "coffee-rails", "~> 4.2"
+gem "config"
 gem "config"
 gem "devise"
 gem "fog"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
 gem "jquery-ui-rails"
+gem "kaminari"
 gem "mini_magick"
 gem "puma", "~> 3.7"
 gem "rails", "~> 5.1.2"
+gem "ransack"
 gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
-gem "will_paginate", "~> 3.0"
+
 
 group :development, :test do
   gem "autoprefixer-rails"

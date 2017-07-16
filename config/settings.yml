@@ -9,3 +9,9 @@ model:
     size_content: 255
   comment:
     size_content: 45
+controller:
+  user_controller:
+    size_page: 10
+view:
+  users:
+    size: 50
