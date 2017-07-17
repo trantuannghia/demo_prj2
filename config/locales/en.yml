@@ -24,3 +24,37 @@ en:
       this_is_the_home_page: "Let's share your world with us."
       welcome: "Welcome"
       fake_book: "Fake book"
+  devise:
+    sessions:
+      new:
+        login: "Login"
+    registrations:
+      new:
+        sign_up: "Sign up"
+        you_have_account: "Do you have account ?"
+        email: "Email"
+        name: "Name"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
+    passwords:
+      edit:
+        change_my_password: "Change my password"
+      new:
+        email: "Email"
+        forgot_your_password: "Forgot Your Password"
+        send_me_reset_password_instructions: "Send me reset password instructions"
+    mailer:
+      confirmation_instructions:
+        you_can_confirm_your_account: "you can confirm your account"
+        welcome: "Welcome"
+        confirm_my_account: "Confirm my account"
+      send_me_reset_password_instructions:
+        hello: "hello"
+        some_one: "Some one charge your password"
+        change_my_password: "Change my password"
+    confirmations:
+      new:
+        resend: "Resend confirmation instructions"
+  shared:
+    error_message:
+      error: "error"

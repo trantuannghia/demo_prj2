@@ -16,6 +16,9 @@ gem "puma", "~> 3.7"
 gem "rails", "~> 5.1.2"
 gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
+gem "bootstrap-sass"
+gem "jquery-rails"
+gem "jquery-ui-rails"
 
 group :development, :test do
   gem "autoprefixer-rails"
@@ -41,14 +44,19 @@ group :development, :test do
   gem "scss_lint", require: false
   gem "scss_lint_reporter_checkstyle", require: false
   gem "selenium-webdriver"
+  gem "sqlite3"
 end
 
 group :development do
   gem "listen", ">= 3.0.5", "< 3.2"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
-  gem "sqlite3"
   gem "web-console", ">= 3.3.0"
+end
+
+group :production do
+  gem "pg"
+  gem "rails_12factor"
 end
 
 group :test do

@@ -28,7 +28,8 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
+  config.assets.digest = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -88,4 +89,21 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  host = "trantuannghiaproject2.herokuapp.com"
+  config.action_mailer.default_url_options = {host: host}
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.perform_caching = false
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
+    address: "smtp.mailgun.org",
+    port: 587,
+    domain: "sandboxd379e7fa6828435caf882bf244593b1a.mailgun.org",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: "postmaster@sandboxd379e7fa6828435caf882bf244593b1a.mailgun.org",
+    password: "fb27eb18a6a24575903d362a12dbe758"
+  }
 end
