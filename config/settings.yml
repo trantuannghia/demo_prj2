@@ -15,3 +15,4 @@ controller:
 view:
   users:
     size: 50
+size_gravatar_post: 70

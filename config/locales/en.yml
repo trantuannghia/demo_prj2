@@ -72,6 +72,8 @@ en:
       post_created!: "Post created !"
     post:
       you_sure: "Are you sure ?"
+      comment: "comment"
+      delete: "Delete"
     destroy:
       post_deleted: "Post deleted!"
   comments:

@@ -3,16 +3,19 @@ class Post < ApplicationRecord
 
   has_many :comments, dependent: :destroy
   has_many :post_tags, dependent: :destroy
+  has_many :tags, through: :post_tags
 
   validates :user, presence: true
   validates :title, length: {maximum: Settings.model.post.size_title}
   validates :content, presence:true, length: {maximum: Settings.model.post.size_content}
   validate  :picture_size
 
-  default_scope -> {order created_at: :desc}
-
   mount_uploader :picture, PictureUploader
 
+  scope :order_by_desc, ->{order created_at: :desc}
+  def show_tag
+    @tags = self.tags
+  end
   private
 
   def picture_size
