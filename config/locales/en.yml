@@ -67,14 +67,27 @@ en:
       write_title: "Write title ..."
     user_info:
       post: "post"
+    edit_form_post:
+      post: "Post"
+      compose_edit_post: "Compose edit post"
+      compose_edit_title: "Compose edit title"
+      cancle: "Cancle"
   posts:
     create:
       post_created!: "Post created !"
+      content_missing: "Your content of post is missing!"
     post:
       you_sure: "Are you sure ?"
+      comment: "comment"
+      delete: "Delete"
+      edit: "Edit"
     destroy:
       post_deleted: "Post deleted!"
       post_deleted_fail: "Post deleted fail!"
+    update:
+      updated: "Updated"
+    index:
+      no_find_any_post_success: "No find any post success"
   javascript:
     max_file_size: "lol"
   comments:
@@ -82,6 +95,8 @@ en:
       post: "Post"
     comment:
       post: "Post"
+      delete: "Delete"
+      ago: "Ago."
   users:
     index:
       all_users: "All users"
@@ -89,3 +104,6 @@ en:
       follow: "Flow this user"
     unfollow:
       unfollow: "Unfollow this user"
+  tags:
+    show:
+      no_find_any_post_success: "No find any post success"

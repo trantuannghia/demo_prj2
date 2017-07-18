@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 
   root "static_pages#home"
   get "/help", to: "static_pages#help"
-  resources :posts, only: [:create, :destroy]
+  get "/search", to: "posts#search"
+  resources :posts
   resources :users do
     member do
       get :following, :followers
@@ -18,4 +19,5 @@ Rails.application.routes.draw do
   end
   resources :comments
   resources :relationships, only: [:create, :destroy]
+  resources :tags
 end

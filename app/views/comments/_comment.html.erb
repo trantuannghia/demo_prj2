@@ -18,7 +18,6 @@
   </ul>
 
   <%= form_for(Comment.new, html: {class: "newcomment2rd"}) do |f| %>
-
       <div class="field">
         <%= f.hidden_field :post_id, value: comment.post.id %>
         <%= f.hidden_field :comment_parent_id, value: comment.id %>

@@ -1,4 +1,9 @@
 class CommentsController < ApplicationController
+
+  def new
+    @comment = Comment.new
+  end
+
   def create
     @post = Post.find_by id: params[:comment][:post_id]
     @comment = Comment.find_by id: params[:comment][:comment_parent_id]

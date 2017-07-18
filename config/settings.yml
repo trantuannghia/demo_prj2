@@ -6,7 +6,7 @@ model:
     minimum_phone: 11
   post:
     size_title: 250
-    size_content: 255
+    size_content: 500
   comment:
     size_content: 45
 controller:
@@ -19,3 +19,4 @@ size_picture: 5
 view:
   users:
     size: 50
+size_gravatar_post: 70

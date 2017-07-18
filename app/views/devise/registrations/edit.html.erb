@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h2><%= t ".edit" %><%= resource_name.to_s.humanize %></h2>
+
+    <%= form_for resource, as: resource_name, url: registration_path(resource_name),
+      html: {method: :put} do |f| %>
+
+      <%= render "shared/error_message", object: resource %>
+
+      <%= f.label t(".name") %><br/>
+      <%= f.text_field :name, autofocus: true, class: "form-control" %>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>
+          <%= t".Currently_waiting_confirmation_for:" %>
+          <%= resource.unconfirmed_email %>
+        </div>
+      <% end %>
+
+      <%= f.label t(".phone") %><br/>
+      <%= f.text_field :phone, autofocus: true, class: "form-control" %>
+
+      <%= f.label t(".password") %> <i><%= t ".leave_blank" %></i>
+      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+
+      <%= f.label t(".password_confirmation") %>
+      <% if @minimum_password_length %>
+        <em><%= @minimum_password_length %><%= t ".character_minimum" %></em>
+      <% end %>
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+
+      <%= f.label t(".current_password") %> <i><%= t ".we_need_current_pwd" %></i>
+      <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+
+      <%= f.submit t(".update"), class: "btn btn-primary btn-block" %>
+    <% end %>
+
+    <h3><%= t ".destroy_my_accout" %></h3>
+
+    <p>
+      <%= t ".do_you_unhappy_with_this_web" %>
+      <%= button_to t(".destroy_my_account"), registration_path(resource_name),
+        data: {confirm: t(".are_you_sure")}, method: :delete, class: "btn destroy" %>
+    </p>
+
+    <%= link_to t(".back"), :back %>
+  </div>
+</div>

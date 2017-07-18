@@ -1,20 +1,16 @@
-$(document).ready(function() {
-  // $('body').on('submit', '.new_post', function(e){
-  //   e.preventDefault();
-  //   var params = $(this).serialize();
-  //   var thispost= $(this);
-  //   $.ajax({
-  //     url: thispost.attr('action'),
-  //     type: 'POST',
-  //     data: params,
-  //     dataType: 'json',
-  //     success: function(response){
-  //       if(response.status == 'success'){
-  //           $('.allpost').prepend(response.html);
-  //           $('textarea').val('');
-  //         }
-  //       }
-  //   });
-  //   return false;
-  // });
-});
+ $('body').on('click', '.delete', function(event) {
+    event.preventDefault();
+    var selfdel = $(this);
+    $.ajax({
+      type: selfdel.attr('data-method'),
+      url: selfdel.attr('href'),
+      dataType: 'json',
+      data: {},
+      success: function(response) {
+      if(response.status == 'success'){
+
+      }
+    }
+  });
+    return false;
+  });

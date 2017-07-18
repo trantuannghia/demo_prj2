@@ -4,6 +4,10 @@
     <div class="center">
       <h1><%= t ".welcome" %></h1>
       <h2><%= t ".this_is_the_home_page" %></h2>
+
+      <%= link_to t(".signup_now"), new_user_registration_path,
+        class: "btn btn-lg btn-primary" %>
+    </div>
   </div>
 
   <video id="my-video" class="video" muted loop>

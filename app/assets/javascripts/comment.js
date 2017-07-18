@@ -2,15 +2,15 @@ $(document).ready(function() {
   $('body').on('submit', '.newcomment', function(e){
     e.preventDefault();
     var params = $(this).serialize();
-    var self = $(this);
+    var selfcmt = $(this);
     $.ajax({
-      url: self.attr('action'),
+      url: selfcmt.attr('action'),
       type: 'POST',
       data: params,
       dataType: 'json',
       success: function(response){
         if(response.status == 'success'){
-            self.prev().prev().append(response.html);
+            selfcmt.prev().prev().append(response.html);
           }
           $('textarea').val('');
           $('.newcomment2rd').hide();
@@ -41,15 +41,15 @@ $(document).ready(function() {
 
   $('body').on('click', '.delete', function(event) {
     event.preventDefault();
-    var self = $(this);
+    var selfdel = $(this);
     $.ajax({
-      type: self.attr('data-method'),
-      url: self.attr('href'),
+      type: selfdel.attr('data-method'),
+      url: selfdel.attr('href'),
       dataType: 'json',
       data: {},
       success: function(response) {
       if(response.status == 'success'){
-        self.parent().parent().hide('slow');
+        selfdel.parent().parent().hide('slow');
       }
     }
   });

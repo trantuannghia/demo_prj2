@@ -7,7 +7,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @posts = @user.posts.order_by_desc.page(params[:page]).per Settings.controller.pre_page
+    @posts = @user.posts.order_by_desc.page(params[:page])
+      .per Settings.controller.user_controller.size_page
   end
 
   def following

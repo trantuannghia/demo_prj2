@@ -34,7 +34,8 @@ $yellow: #ff0;
   font-weight: bold;
   letter-spacing: -1px;
   margin-right: 10px;
-  padding-top: 12px;
+  padding-top: 10px;
+  padding-left: 20px;
   text-transform: uppercase;
 
   &:hover {
@@ -45,6 +46,7 @@ $yellow: #ff0;
 
 .navbar-inverse {
   border-color: $blues;
+  height: 50px;
 
   .navbar-nav > li > a {
     color: $yellow;
@@ -61,6 +63,14 @@ header {
 
 nav {
   font-size: 1.2em;
+  float: left;
+  margin-left: 170px;
+}
+
+.helpsearch {
+  z-index : 2;
+  background-color: white;
+  width: 195px;
 }
 
 // body
@@ -100,6 +110,12 @@ body {
   h1 {
     margin-bottom: 10px;
   }
+}
+
+.formsearch {
+  width: 200px;
+  margin: 7 20px 0 0px;
+
 }
 
 // footer
@@ -163,7 +179,7 @@ footer {
   .timestamp {
     color: $gray-light;
     display: block;
-    margin-left: 60px;
+    margin-left: px;
     label {
       color: $bl;
     }
@@ -179,6 +195,7 @@ aside {
     height: 100px;
     margin-bottom: 5px;
   }
+
 }
 
 span.picture {
@@ -203,6 +220,11 @@ ul > li {
 .titles {
   font-weight: bold;
   margin-top: 100px;
+}
+
+.contentpost {
+  text-align:justify;
+  margin-left: 90px;
 }
 
 //form
@@ -241,6 +263,20 @@ input {
   .current { background: yellow }
   .next_page { background: #7777ff; color: white }
   .next_page.disabled { background: white; color: #777 }
+}
+
+.edit_post {
+  textarea {
+    width: 400px;
+    padding: 20px 0;
+    border-radius: 5px;
+  }
+  .btn {
+    float: right;
+  }
+  .button_edit {
+    margin-right: 140px;
+  }
 }
 
 //comment
