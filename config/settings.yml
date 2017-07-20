@@ -9,3 +9,8 @@ model:
     size_content: 255
   comment:
     size_content: 45
+controller:
+  per_page: 10
+size_gravater: 50
+size_upload: 400
+size_picture: 5

@@ -20,4 +20,12 @@ class User < ApplicationRecord
   validates :password, presence: true,
     length: {minimum: Settings.model.user.minimum_password}, allow_nil: true
   validates :phone, length: {maximum: Settings.model.user.minimum_phone}
+
+  def feed
+    Post.post_following(following_ids,id).order_by_desc
+  end
+
+  def is_user? user
+    self == user
+  end
 end
