@@ -9,7 +9,7 @@
           <li class="dropdown">
             <%= link_to raw(t(".setting")+"<b class='caret'></b>".html_safe), "#", data: {toggle: "dropdown"} %>
             <ul class="dropdown-menu">
-              <li><%= link_to t(".my_profile"), "#" %></li>
+              <li><%= link_to t(".my_profile"), edit_user_registration_path(current_user) %></li>
               <li><%= link_to t(".my_post"), current_user %></li>
               <li class="divider"></li>
               <li>

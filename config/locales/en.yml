@@ -36,6 +36,21 @@ en:
         name: "Name"
         password: "Password"
         password_confirmation: "Password Confirmation"
+      edit:
+        edit: "Edit"
+        update: "Update"
+        destroy_my_account: "Destroy my account"
+        do_you_unhappy_with_this_web: "Do you unhappy with this website?"
+        are_you_sure: "Are yoy sure ?"
+        leave_blank: "(leave blank if you don't want to change it)"
+        character_minimum: " characters minimum"
+        we_need_current_pwd: "(we need your current password to confirm your changes)"
+        back: "Back"
+        name: "Name"
+        phone: "Phone"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
+        current_password: "Current Password"
     passwords:
       edit:
         change_my_password: "Change my password"

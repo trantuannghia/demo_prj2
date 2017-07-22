@@ -17,7 +17,7 @@ $blue: #e6ffff;
 $blues: #88c6ed;
 $yellow: #ff0;
 $bl: #333333;
-$dark-red: #e8e8e8;
+$dark-red: #800000;
 $blue-dark: #7777ff;
 $grey: #777;
 $red: red;
@@ -223,4 +223,9 @@ input {
     color: $red;
     margin: 0 0 30px 0;
   }
+}
+
+.destroy {
+  background-color: $dark-red;
+  color: $white;
 }
