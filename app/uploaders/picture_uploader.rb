@@ -1,5 +1,4 @@
 class PictureUploader < CarrierWave::Uploader::Base
-
   include CarrierWave::MiniMagick
   process resize_to_limit: [Settings.size_upload, Settings.size_upload]
 

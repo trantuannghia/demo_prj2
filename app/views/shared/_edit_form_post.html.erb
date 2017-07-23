@@ -1,0 +1,13 @@
+<%= form_for @post, url: post_path, class: "editform" do |f| %>
+  <%= render "shared/error_message", object: f.object %>
+  <div class="field">
+    <%= f.text_field :title, placeholder: t(".compose_edit_title") %>
+    </div>
+  <div class="field">
+    <%= f.text_area :content, placeholder: t(".compose_edit_post") %>
+  </div>
+  <div class="button_edit">
+  <%= f.submit t(".post"), class: "btn btn-primary" %>
+  <%= f.button t(".cancle"), class: "btn btn-primary", id: "button_cancle" %>
+  </div>
+<% end %>

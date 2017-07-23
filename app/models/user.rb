@@ -4,10 +4,11 @@ class User < ApplicationRecord
   devise :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
 
   has_many :comments, dependent: :destroy
-  has_many :active_relationships, class_name: "Relationship",
+  has_many :active_relationships, class_name: Relationship.name,
     foreign_key: "follower_id", dependent: :destroy
-  has_many :passive_relationships, class_name: "Relationship",
+  has_many :passive_relationships, class_name: Relationship.name,
     foreign_key: "followed_id", dependent: :destroy
+
   has_many :following, through: :active_relationships,  source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
   has_many :posts, dependent: :destroy
@@ -29,6 +30,7 @@ class User < ApplicationRecord
   def is_user? user
     self == user
   end
+  
   class << self
 
     def new_with_session params, session
@@ -45,7 +47,19 @@ class User < ApplicationRecord
         user.email = auth.info.email
         user.password = Devise.friendly_token[0,20]
         user.name = auth.info.name
-      end
     end
+ end
+
+
+  def follow other_user
+    active_relationships.create(followed_id: other_user.id)
+  end
+
+  def unfollow other_user
+    following.delete other_user
+  end
+
+  def following? other_user
+    following.include? other_use
   end
 end
