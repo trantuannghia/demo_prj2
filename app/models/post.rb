@@ -17,7 +17,9 @@ class Post < ApplicationRecord
     where "user_id IN (?) OR user_id = ?", following_ids, id
   }
   scope :search_post, ->search{where "content LIKE ? OR title LIKE ?", "%#{search}%", "%#{search}%"}
-
+  scope :created_on_day, ->{where "created_at > ?", 1.days.ago}
+  scope :created_on_week, ->{where "created_at > ?", 1.weeks.ago}
+  scope :created_on_month, ->{where "created_at > ?", 1.months.ago}
   def show_tag
     @tags = self.tags
   end

@@ -23,6 +23,16 @@ class UsersController < ApplicationController
     render "show_follow"
   end
 
+  def destroy
+    if @user.destroy
+      flash[:success] = t ".user_delete"
+    else
+      flash[:success] = t ".error"
+    end
+
+    redirect_back(fallback_location: root_path)
+  end
+
   private
 
   def load_user

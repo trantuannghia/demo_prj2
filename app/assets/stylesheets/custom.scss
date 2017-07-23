@@ -13,17 +13,16 @@
 }
 
 $bl: #333333;
-$bl: #333333;
 $blue-dark: #7777ff;
-$blue-dark: #fff;
 $blue: #e6ffff;
 $blues: #88c6ed;
-$dark-red: #e8e8e8;
-$dark-red: #e8e8e8;
-$grey: #777;
-$red: red;
+$yellow: #ff0;
+$bl: #333333;
+$dark-red: #800000;
 $white: #fff;
 $yellow: #ff0;
+$red: red;
+
 
 //header
 
@@ -59,6 +58,10 @@ header {
 
 .container {
   margin: auto;
+  .omiauth_img > img {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 nav {
@@ -118,6 +121,22 @@ body {
 
 }
 
+.alert {
+  width: 400px;
+}
+
+.alert-notice {
+  background-color: #ccff99;
+}
+
+.adminIndex {
+  margin-top: 60px;
+  img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
 // footer
 
 footer {
@@ -170,10 +189,14 @@ footer {
   .content {
     display: block;
     margin-left: 60px;
+    margin-top: 30px;
+
     img {
       display: block;
       margin-top: 15px;
       padding: 5px 0;
+      width: 400px;
+      height: 200px;
     }
   }
   .timestamp {
@@ -213,6 +236,7 @@ ol > li{
   margin-bottom: 15px;
   margin-top: 15px;
 }
+
 ul > li {
   margin-bottom: 10px;
 }
@@ -257,12 +281,9 @@ input {
   }
 }
 
-.pagination {
-  .previous_page { background:#7777ff; color:white }
-  .previous_page.disabled { background: white; color: #777 }
-  .current { background: yellow }
-  .next_page { background: #7777ff; color: white }
-  .next_page.disabled { background: white; color: #777 }
+.destroy {
+  background-color: $dark-red;
+  color: $white;
 }
 
 .edit_post {
@@ -271,9 +292,11 @@ input {
     padding: 20px 0;
     border-radius: 5px;
   }
+
   .btn {
     float: right;
   }
+
   .button_edit {
     margin-right: 140px;
   }
@@ -282,6 +305,7 @@ input {
 //comment
 
 //button_comment
+
 .comment {
   float: right;
   width: 50px;
@@ -301,15 +325,18 @@ ul > li {
   overflow: auto;
   margin-top: 0;
   padding: 0;
+
   a {
     float: left;
     padding: 0 10px;
     border-left: 1px solid $gray-lighter;
     color: gray;
+
     &:first-child {
       padding-left: 0;
       border: 0;
     }
+
     &:hover {
       text-decoration: none;
       color: blue;
@@ -323,9 +350,11 @@ ul > li {
 .user_avatars {
   overflow: auto;
   margin-top: 10px;
+
   .gravatar {
     margin: 1px 1px;
   }
+
   a {
     padding: 0;
   }
@@ -340,6 +369,7 @@ ul > li {
 .users {
   list-style: none;
   margin: 0;
+
   li {
     overflow: auto;
     padding: 10px 0;

@@ -1,0 +1,4 @@
+<%= form_for @comment, url: comment_path, class: "editform" do |f| %>
+  <%= f.text_field :content, placeholder: t(".compose_edit_comment") %>
+   <%= f.submit t(".edit_comment"), class: "btn btn-primary update-comment hide" %>
+<% end %>

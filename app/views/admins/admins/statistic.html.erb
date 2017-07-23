@@ -1,0 +1,22 @@
+<h3>
+  <%= t ".statistic_information" %>
+</h3>
+<p><label>User count :</label><%= @user_count[:user_count] %></p>
+<ul>
+  <li><label>User create in this week :</label><%= @user_count[:user_week] %></li>
+</ul>
+<p><label>Post count :</label><%= @post_count[:post_count]%></p>
+<ul>
+  <li><label>Post create this day :</label><%= @post_count[:post_count_day] %></li>
+  <li><label>Post create this week :</label><%= @post_count[:post_count_week] %></li>
+  <li><label>Post create this month :</label><%= @post_count[:post_count_month] %></li>
+</ul>
+<div class="container">
+  <p>
+    Download:
+    <%= link_to "Excel_By_Gem_To_Xls", admins_to_xls_path(format: "xls") %>
+  </p>
+</div>
+<div>
+  <%= link_to t(".back"), admins_root_url %>
+</div>

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: "users/registrations",
-    confirmations: "users/confirmations"
+    confirmations: "users/confirmations",
+    omniauth_callbacks: "users/omniauth_callbacks"
   }
 
   devise_scope :user do
@@ -19,5 +20,13 @@ Rails.application.routes.draw do
   end
   resources :comments
   resources :relationships, only: [:create, :destroy]
-  resources :tags
+  resources :tags, only: :show
+
+  namespace :admins do
+    root to: "admins#index"
+    get "/statistic", to: "admins#statistic"
+    get "/to_xls", to: "to_xls#index"
+    resources :users
+    resources :posts, only: [:index, :destroy]
+  end
 end

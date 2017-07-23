@@ -1,4 +1,11 @@
 en:
+  admins:
+    users:
+      user:
+        you_sure: "You sure?"
+        delete: "Delete"
+      index:
+        back: "Back"
   layouts:
     application:
       project2: "Project2"
@@ -39,6 +46,21 @@ en:
         name: "Name"
         password: "Password"
         password_confirmation: "Password Confirmation"
+      edit:
+        edit: "Edit"
+        update: "Update"
+        destroy_my_account: "Destroy my account"
+        do_you_unhappy_with_this_web: "Do you unhappy with this website?"
+        are_you_sure: "Are yoy sure ?"
+        leave_blank: "(leave blank if you don't want to change it)"
+        character_minimum: " characters minimum"
+        we_need_current_pwd: "(we need your current password to confirm your changes)"
+        back: "Back"
+        name: "Name"
+        phone: "Phone"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
+        current_password: "Current Password"
     passwords:
       edit:
         change_my_password: "Change my password"
@@ -67,11 +89,14 @@ en:
       write_title: "Write title ..."
     user_info:
       post: "post"
+      view_my_wall: "View my wall"
     edit_form_post:
       post: "Post"
       compose_edit_post: "Compose edit post"
       compose_edit_title: "Compose edit title"
       cancle: "Cancle"
+    edit_form_comment:
+      compose_edit_comment: "Compose edit comment.."
   posts:
     create:
       post_created!: "Post created !"
@@ -97,6 +122,7 @@ en:
       post: "Post"
       delete: "Delete"
       ago: "Ago."
+      edit: "Edit"
   users:
     index:
       all_users: "All users"

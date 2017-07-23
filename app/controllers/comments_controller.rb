@@ -25,8 +25,19 @@ class CommentsController < ApplicationController
     end
   end
 
-  def show
+  def edit
+    @comment = Comment.find_by id: params[:id]
+    render json: {status: :success, html: render_to_string(partial: "shared/edit_form_comment")}
+  end
 
+  def update
+    @comment = Comment.find_by id: params[:id]
+
+    if @comment.update_attributes content: params[:comment][:content]
+       render json: {status: :success}
+    else
+      render json: {status: :error}
+    end
   end
 
   def destroy
@@ -44,4 +55,5 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit :content, :comment_parent_id, :post_id
   end
+
 end

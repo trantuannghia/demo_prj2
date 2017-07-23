@@ -56,4 +56,44 @@ $(document).ready(function() {
     return false;
   });
 
+  $('body').on('click', '.editcomment_btn', function(event) {
+    event.preventDefault();
+    var selfbtn = $(this);
+    $.ajax({
+      type: selfbtn.attr('data-method'),
+      url: selfbtn.attr('href'),
+      dataType: 'json',
+      data: {},
+      success: function(response) {
+      if(response.status == 'success'){
+        text_edit = selfbtn.parent().prev().children('span');
+        text_edit.empty();
+        text_edit.append(response.html);
+      }
+    }
+  });
+    return false;
+  });
+
+
+  $('body').on('submit', '.edit_comment', function(event) {
+    event.preventDefault();
+    var selfbtn = $(this);
+    var params = $(this).serialize();
+    $.ajax({
+      type: 'PATCH',
+      url: selfbtn.attr('action'),
+      dataType: 'json',
+       data: params,
+      success: function(response) {
+      if(response.status == 'success'){
+        text = selfbtn.children('#comment_content').val();
+        selfbtn.parent().append(text);
+        selfbtn.remove();
+      }
+    }
+  });
+    return false;
+  });
+
 });

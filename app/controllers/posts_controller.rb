@@ -88,16 +88,12 @@ class PostsController < ApplicationController
     if params[:search] == ""
       render json: {status: :success, html: ""}
     else
-      @posts = Post.search_post(params[:search])
+      search = params[:search]
+      @posts = Post.all.search_post(search)
       textjson = ""
       @posts.each do |post|
         contents = post.content.gsub("<br>", "\r\n")
-        idx = contents.index(params[:search])
-        if idx > 20
-          textjson << "<li>.."+contents[idx-20,idx+20]+"..</li>"
-        else
-          textjson << "<li>.."+contents[idx,idx+30]+"..</li>"
-        end
+        textjson << "<li>.."+contents+"..</li>"
       end
       render json: {status: :success, html: textjson}
     end

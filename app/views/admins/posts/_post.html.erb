@@ -14,13 +14,10 @@
     <%= t ".posted" %>
     <%= time_ago_in_words post.created_at %>
     <%= t ".ago" %>
-    <% if current_user.is_user? post.user %>
-      <%= link_to t(".edit"), edit_post_path(post), id: "editbutton" %>
+    <%= link_to t(".delete"), post, method: :delete, class: "delete" %>
 
-      <%= link_to t(".delete"), post, method: :delete, class: "delete" %>
-    <% end %>
   </span>
-  <span class="content" >
+  <span class="content">
     <%= image_tag post.picture.url if post.picture? %>
   </span>
 
@@ -29,6 +26,5 @@
   </ul>
 
   <%= content_tag :label, t(".comment"), class: "comments" %>
-  <%= render "comments/form", post: post if
-    (current_user.following? post.user) || (current_user.is_user? post.user) %>
+  <%= render "comments/form", post: post  %>
 </li>
