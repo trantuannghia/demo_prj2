@@ -1,0 +1,7 @@
+<%= form_for(Comment.new, html: {class: "newcomment"}) do |f| %>
+  <div class="field", id="field-<%= post.id %>">
+   <%= f.hidden_field :post_id, value: post.id %>
+    <%= f.text_area :content, class: "form-control" %>
+    <%= f.submit t(".post"), class: "comment" %>
+  </div>
+<% end %>

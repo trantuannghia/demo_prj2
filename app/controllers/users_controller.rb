@@ -1,14 +1,26 @@
 class UsersController < ApplicationController
   load_and_authorize_resource
-
-  before_action :load_user, only: :show
+  before_action :load_user, except: :index
 
   def index
     @users = User.select(:id, :name, :email).page(params[:page]).per Settings.controller.pre_page
   end
 
   def show
-    @posts = @user.posts.order_by_desc.page(params[:page]).per Settings.controller.pre_page
+    @posts = @user.posts.order_by_desc.page(params[:page])
+      .per Settings.controller.user_controller.size_page
+  end
+
+  def following
+    @title = "Following"
+    @users = @user.following.page params[:page]
+    render "show_follow"
+  end
+
+  def followers
+    @title = "Followers"
+    @users = @user.followers.page params[:page]
+    render "show_follow"
   end
 
   private
@@ -19,5 +31,4 @@ class UsersController < ApplicationController
     flash[:danger] = t ".find_rerror"
     redirect_to root_url
   end
-
 end

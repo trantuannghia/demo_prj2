@@ -1,5 +1,5 @@
-@import 'bootstrap';
-@import 'bootstrap-sprockets';
+@import "bootstrap";
+@import "bootstrap-sprockets";
 
 @mixin webkit {
   -ms-transform: translate(-50%, -50%);
@@ -12,15 +12,18 @@
   box-sizing: border-box;
 }
 
-$white: #fff;
+$bl: #333333;
+$bl: #333333;
+$blue-dark: #7777ff;
+$blue-dark: #fff;
 $blue: #e6ffff;
 $blues: #88c6ed;
 $yellow: #ff0;
 $bl: #333333;
 $dark-red: #800000;
 $blue-dark: #7777ff;
-$grey: #777;
-$red: red;
+$white: #fff;
+$yellow: #ff0;
 
 //header
 
@@ -31,7 +34,8 @@ $red: red;
   font-weight: bold;
   letter-spacing: -1px;
   margin-right: 10px;
-  padding-top: 12px;
+  padding-top: 10px;
+  padding-left: 20px;
   text-transform: uppercase;
 
   &:hover {
@@ -42,6 +46,7 @@ $red: red;
 
 .navbar-inverse {
   border-color: $blues;
+  height: 50px;
 
   .navbar-nav > li > a {
     color: $yellow;
@@ -58,7 +63,14 @@ header {
 
 nav {
   font-size: 1.2em;
-  margin-top: 5px;
+  float: left;
+  margin-left: 170px;
+}
+
+.helpsearch {
+  z-index : 2;
+  background-color: white;
+  width: 195px;
 }
 
 // body
@@ -98,6 +110,12 @@ body {
   h1 {
     margin-bottom: 10px;
   }
+}
+
+.formsearch {
+  width: 200px;
+  margin: 7 20px 0 0px;
+
 }
 
 // footer
@@ -161,7 +179,7 @@ footer {
   .timestamp {
     color: $gray-light;
     display: block;
-    margin-left: 60px;
+    margin-left: px;
     label {
       color: $bl;
     }
@@ -177,6 +195,7 @@ aside {
     height: 100px;
     margin-bottom: 5px;
   }
+
 }
 
 span.picture {
@@ -198,7 +217,19 @@ ul > li {
   margin-bottom: 10px;
 }
 
+.titles {
+  font-weight: bold;
+  margin-top: 100px;
+}
+
+.contentpost {
+  text-align:justify;
+  margin-left: 90px;
+}
+
 //form
+
+
 .new_post {
   input, textarea, select, .uneditable-input {
     border: 1px solid $gray;
@@ -207,6 +238,7 @@ ul > li {
     @include box_sizing;
   }
 }
+
 input {
   height: auto !important;
 }
@@ -228,4 +260,85 @@ input {
 .destroy {
   background-color: $dark-red;
   color: $white;
+  
+.edit_post {
+  textarea {
+    width: 400px;
+    padding: 20px 0;
+    border-radius: 5px;
+  }
+  .btn {
+    float: right;
+  }
+  .button_edit {
+    margin-right: 140px;
+  }
+}
+
+//comment
+
+//button_comment
+.comment {
+  float: right;
+  width: 50px;
+  text-align: center;
+  height: 5px;
+  margin-top: 0px;
+  border-radius: 12px;
+  background-color: #00b3b3;
+}
+ul > li {
+  margin-top: 5px;
+}
+
+//stats
+
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+  a {
+    padding: 0;
+  }
+}
+
+.users.follow {
+  padding: 0;
+}
+
+// Users index
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
 }

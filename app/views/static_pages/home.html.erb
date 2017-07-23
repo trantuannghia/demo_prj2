@@ -5,19 +5,23 @@
       <h1><%= t ".welcome" %></h1>
       <h2><%= t ".this_is_the_home_page" %></h2>
 
-      <%= link_to t(".signup_now"), new_user_registration_path, class: "btn btn-lg btn-primary" %>
+      <%= link_to t(".signup_now"), new_user_registration_path,
+        class: "btn btn-lg btn-primary" %>
     </div>
   </div>
-    <video id="my-video" class="video" muted loop>
-      <source src="assets/demo.mp4" type="video/mp4">
-    </video>
+
+  <video id="my-video" class="video" muted loop>
+     <source src="assets/demo.mp4" type="video/mp4">
+  </video>
 <% else %>
   <div class="row">
     <div class="col-md-3">
       <aside>
         <section class="user_info">
+          <%=  render "shared/user_info" %>
         </section>
         <section class="stats">
+          <%= render "shared/stats" %>
         </section>
       </aside>
     </div>
@@ -30,12 +34,11 @@
       </div>
       <div class="row">
         <h3><%= t ".post_feed" %></h3>
-        <ol class="post">
-        <%= render "shared/feed" %>
+        <ol class="allpost">
+          <%= render "shared/feed" %>
         <ol>
       </div>
     </div>
-    <div class="col-md-3">
-    </div>
+    <div class="col-md-3"></div>
   </div>
 <% end %>
