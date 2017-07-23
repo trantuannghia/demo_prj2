@@ -1,0 +1,30 @@
+<li id="post-<%= post.id %>", class="posts">
+  <%= link_to gravatar_for(post.user, size: Settings.size_gravatar_post),
+    post.user %>
+  <span class="user">
+    <h3><%= link_to post.user.name, post.user %></h3>
+    <span class="titles"><%= post.title %></span><br>
+    <span>
+      <%= post.show_tag.map{|wl| link_to "##{wl[:name]}","/tags/#{wl[:id]}"}.join(', ').html_safe %>
+    </span><br>
+    <p class="contentpost"><%= post.content %></p>
+  </span>
+  <div class="editpost">  </div>
+  <span class="timestamp">
+    <%= t ".posted" %>
+    <%= time_ago_in_words post.created_at %>
+    <%= t ".ago" %>
+    <%= link_to t(".delete"), post, method: :delete, class: "delete" %>
+
+  </span>
+  <span class="content">
+    <%= image_tag post.picture.url if post.picture? %>
+  </span>
+
+  <ul class="comment_list">
+    <%= render post.comments.check_child %>
+  </ul>
+
+  <%= content_tag :label, t(".comment"), class: "comments" %>
+  <%= render "comments/form", post: post  %>
+</li>

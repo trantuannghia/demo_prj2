@@ -6,8 +6,9 @@
       <li>
         <%= gravatar_for user %>
         <%= link_to user.name, user, class: "user-name" %>
+
       </li>
     <% end %>
 </ul>
 
-<%= paginate @users %>
+<%= paginate @users, theme: "twitter-bootstrap-3" %>

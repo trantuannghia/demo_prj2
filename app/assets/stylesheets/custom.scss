@@ -118,6 +118,16 @@ body {
 
 }
 
+.alert-notice {
+  background-color: green;
+  width: 400px;
+  color: $white;
+}
+.alert-alert {
+    background-color: #ff8080;
+    width: 400px;
+}
+
 // footer
 
 footer {

@@ -22,12 +22,18 @@ class User < ApplicationRecord
     length: {minimum: Settings.model.user.minimum_password}, allow_nil: true
   validates :phone, length: {maximum: Settings.model.user.minimum_phone}
 
+  scope :create_on_week, ->{where "created_at > ? ", 1.weeks.ago}
+
   def feed
     Post.post_following(following_ids,id).order_by_desc
   end
 
   def is_user? user
     self == user
+  end
+
+  def is_admin?
+    self.is_admin == 1
   end
 
   def follow other_user

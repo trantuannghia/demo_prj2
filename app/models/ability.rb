@@ -12,5 +12,8 @@ class Ability
     can [:full_acc], Comment, user_id: user_id
     can [:search], Post
     can [:following, :followers], User
+    if user.is_admin?
+      can [:destroy], User
+    end
   end
 end

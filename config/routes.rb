@@ -20,4 +20,11 @@ Rails.application.routes.draw do
   resources :comments
   resources :relationships, only: [:create, :destroy]
   resources :tags
+
+  namespace :admins do
+    root to: "admins#index"
+    get "/statistic", to: "admins#statistic"
+    resources :users
+    resources :posts, only: [:index, :destroy]
+  end
 end

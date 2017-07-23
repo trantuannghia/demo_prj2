@@ -104,6 +104,9 @@ en:
       follow: "Flow this user"
     unfollow:
       unfollow: "Unfollow this user"
+    destroy:
+      user_delete: "user deleted!"
+      error: "Delete error"
   tags:
     show:
       no_find_any_post_success: "No find any post success"
