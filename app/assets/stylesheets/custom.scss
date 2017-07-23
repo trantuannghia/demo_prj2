@@ -18,10 +18,10 @@ $blue-dark: #7777ff;
 $blue-dark: #fff;
 $blue: #e6ffff;
 $blues: #88c6ed;
-$dark-red: #e8e8e8;
-$dark-red: #e8e8e8;
-$grey: #777;
-$red: red;
+$yellow: #ff0;
+$bl: #333333;
+$dark-red: #800000;
+$blue-dark: #7777ff;
 $white: #fff;
 $yellow: #ff0;
 
@@ -267,14 +267,10 @@ input {
   }
 }
 
-.pagination {
-  .previous_page { background:#7777ff; color:white }
-  .previous_page.disabled { background: white; color: #777 }
-  .current { background: yellow }
-  .next_page { background: #7777ff; color: white }
-  .next_page.disabled { background: white; color: #777 }
-}
-
+.destroy {
+  background-color: $dark-red;
+  color: $white;
+  
 .edit_post {
   textarea {
     width: 400px;
